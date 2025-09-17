@@ -1,36 +1,16 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/get-transcript",
-      "methods": ["POST", "OPTIONS"],
-      "dest": "server.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
-    },
-    {
-      "src": "/generate-quiz",
-      "methods": ["POST", "OPTIONS"],
-      "dest": "server.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
-  ],
-  "regions": ["cdg1"]
+ "version": 2,
+ "builds": [
+  {
+   "src": "app.js",
+   "use": "@vercel/node",
+   "config": { "includeFiles": ["dist/**"] }
+  }
+ ],
+ "routes": [
+  {
+   "src": "/(.*)",
+   "dest": "app.js"
+  }
+ ]
 }
