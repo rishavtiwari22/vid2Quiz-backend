@@ -224,7 +224,7 @@ app.post("/generate-quiz", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.send("YouTube Transcript Extractor - Send POST request to /get-transcript with videoId");
+    res.send("Rt YouTube Transcript Extractor - Send POST request to /get-transcript with videoId");
 });
 
 app.listen(3001, () => console.log("Server running on http://localhost:3001"));
